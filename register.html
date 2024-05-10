@@ -23,7 +23,7 @@
 
         <!-- style responsive -->
         <style>
-            @media(max-width:992px){
+            @media(max-width:850px){
                 .butt{
                     font-size: 7px;
                 }
@@ -46,9 +46,9 @@
             <form class="mt-4 border shadow rounded-3 p-3" style="background-image: linear-gradient(to right, rgb(162,162,230), rgb(222,221,221));">
                 <h3 class="text-center text-primary mt-3"> Register</h3>
                 <div class="px-5">
-                    <input class="form-control mt-3" type="text" placeholder="Username">
-                    <input class="form-control mt-3" type="password" placeholder="password">
-                    <button class="btn btn-primary my-3 w-25 butt" type="button">Register</button>
+                    <input id="regUser"  class="form-control mt-3" type="text" placeholder="Username">
+                    <input id="regPswd" class="form-control mt-3" type="password" placeholder="password">
+                    <button onclick="obj.register()" class="btn btn-primary my-3 w-25 butt" type="button">Register</button>
                     <span class="ms-3 change">Are you already a user? Click here to <a href="./login.html#login">Login</a></span>
                 </div>
             </form>
