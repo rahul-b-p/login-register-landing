@@ -45,12 +45,26 @@ class Landing{
         this.getData()
         let user=loguser.value
         let pswd =logpswd.value
-        if (user in this.database) {
-            if
+        if(user=="" || pswd==""){
+            alert('please fill the form completely')
         }
         else{
-            alert('user does not exist')
-        }
+            if (user in this.database) {
+                if(this.database[user].password==pswd){
+                    
+                    alert('login successfully')
+                    uname.innerHTML=`${user}`
+                    window.location = 'home.html'
+                    
+                }
+                else{
+                    alert('incorrect password')
+                }
+            }
+            else{
+                alert('user does not exist')
+            }
+    }
     }
 }
 const obj = new Landing()
