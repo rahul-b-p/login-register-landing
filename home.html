@@ -18,17 +18,30 @@
         <nav class="navbar bg-transparent">
             <div class="container-fluid">
                 <a href="" class="navbar-brand"><i class="fa-solid fa-bars text-light fa-2x"></i> <span class="fs-3 text-light ms-2">Dashboard</span></a>
-                <a href="./login.html" class="navbar-brand"><i class="fa-solid fa-user me-2 bg-light rounded-circle p-2"></i><span class="text-light">Logout</span></a>
+                <a type="button" onclick="logout()"  class="btn navbar-brand"><i class="fa-solid fa-user me-2 bg-light rounded-circle p-2"></i><span class="text-light">Logout</span></a>
             </div>
         </nav>
     </header>
 
     <div class="container-fluid">
-        <h1 class="mt-5 text-center text-primary">Welcome <span id="uname" class="text-danger">User</span>....</h1>
+        <h1 class="mt-5 text-center text-primary">Welcome <span id="uname" class="text-danger">User</span></h1>
         <p class="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quidem quis odio, eum molestiae itaque temporibus cupiditate quibusdam totam aliquam exercitationem, sequi tempora ea voluptas veniam dignissimos enim quia atque!Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ducimus dolorum, quia excepturi ipsa officia ratione voluptas animi id accusantium, dignissimos ipsam tempore earum veniam, dolor sit facilis illum reiciendis! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit consequuntur laudantium dicta, vel nam omnis provident nesciunt dolore doloribus qui voluptatem beatae harum facere ipsum aut perspiciatis ratione. Earum, unde.
         </p>
     </div>
 </body>
-<script src="./logic.js"></script>
+<script>
+    let user =localStorage.getItem("user")
+    if (!user) {
+        window.location ='login.html'
+    }
+    else{
+        uname.innerHTML= user
+    }
+
+    function logout(){
+        localStorage.removeItem("user")
+        window.location ='login.html'
+    }
+</script>
 </html>

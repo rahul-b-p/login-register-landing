@@ -53,12 +53,14 @@ class Landing{
                 if(this.database[user].password==pswd){
                     
                     alert('login successfully')
-                    uname.innerHTML=`${user}`
-                    window.location = 'home.html'
+                    localStorage.setItem("user",user)
+                    // navigate to home
+                    window.location ='home.html'
+                    
                     
                 }
                 else{
-                    alert('incorrect password')
+                    alert('invalid username or password')
                 }
             }
             else{
